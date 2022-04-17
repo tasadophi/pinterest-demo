@@ -12,9 +12,7 @@ const Loading = () => {
   );
 };
 
-const Main = () => {
-  const [products, setProducts] = useState(null);
-
+const Main = ({ products, setProducts }) => {
   // offset value
   const getOffset = () => parseInt(localStorage.getItem("offset"));
   const addOffset = () =>
@@ -56,7 +54,7 @@ const Main = () => {
   if (!products) return <Loading />;
 
   return (
-    <main className="p-4">
+    <main className="md:container p-4">
       <InfiniteScroll
         pageStart={0}
         loadMore={loadProducts}
